@@ -16,6 +16,10 @@ jobs:
     runs-on: ubuntu-latest
     name: Update latest tasks
     steps:
+      - name: checkout main
+        uses: actions/checkout@v3
+        with:
+          ref: main
       - name: Retrieve tasks from server
         uses: isseikz/study-coding-gh-action@main
         with:
