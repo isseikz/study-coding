@@ -1,0 +1,14 @@
+on:
+  schedule:
+    - cron: '0 5 * * *'
+  workflow_dispatch:
+
+jobs:
+  request-latest-tasks:
+    runs-on: ubuntu-latest
+    name: Update latest tasks
+    steps:
+      - name: Retrieve tasks from server
+        uses: isseikz/study-coding-gh-action@v0.0.1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
