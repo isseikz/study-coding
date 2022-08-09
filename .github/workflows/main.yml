@@ -9,6 +9,6 @@ jobs:
     name: Update latest tasks
     steps:
       - name: Retrieve tasks from server
-        uses: isseikz/study-coding-gh-action@v0.0.1
+        uses: isseikz/study-coding-gh-action@main
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
