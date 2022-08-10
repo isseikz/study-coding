@@ -19,9 +19,10 @@ jobs:
       - name: Checkout branch
         uses: actions/checkout@v3
         with:
-          ref: ${{ github.event.pull_request.base.ref }}
+          ref: ${{ github.event.repository.default_branch }}
       - name: Send diff to our service
         uses: isseikz/send-pullrequests-info-gh-action@main
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          tracking-branch: ${{ github.event.repository.default_branch }}
   
