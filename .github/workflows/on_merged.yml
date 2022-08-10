@@ -20,9 +20,11 @@ jobs:
         uses: actions/checkout@v3
         with:
           ref: ${{ github.event.repository.default_branch }}
+      - name: Create diff.patch from the latest commit
+        id: create-diff
+        run: echo "::set-output name=patch::${git diff HEAD^..DEAD}"
       - name: Send diff to our service
         uses: isseikz/send-pullrequests-info-gh-action@main
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          tracking-branch: ${{ github.event.repository.default_branch }}
+          diff: ${{ steps.create-diff.outputs.patch }}
   
