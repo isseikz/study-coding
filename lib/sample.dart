@@ -1,5 +1,5 @@
 class Sample {
   String hello() {
-    return "";
+    return "Hello!";
   }
 }
