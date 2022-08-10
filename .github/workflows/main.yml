@@ -24,3 +24,4 @@ jobs:
         uses: isseikz/study-coding-gh-action@main
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          collection-name: simplified-commit
