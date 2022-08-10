@@ -1,9 +1,7 @@
 on:
-  pull_request:
+  push:
     branches:
-      - ${{ github.event.pull_request.base.ref }}
-    types: [closed]
-  workflow_dispatch: # testing use
+      - main
 
 env: 
   API_KEY: ${{ secrets.API_KEY }}
