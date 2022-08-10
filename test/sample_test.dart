@@ -1,5 +1,6 @@
-import 'package:sample/sample.dart';
 import 'package:test/test.dart';
+
+import '../lib/sample.dart';
 
 void main() {
   test('test name', () {
